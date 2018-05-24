@@ -21,6 +21,8 @@ branches:
 env:
   - TEST=foo
   - TEST=bar
+  
+env:
   global:
     - TEST_RESULTS_DIR=$SHIPPABLE_REPO_DIR/shippable/testresults
     - CODE_COVERAGE_DIR=$SHIPPABLE_REPO_DIR/shippable/codecoverage

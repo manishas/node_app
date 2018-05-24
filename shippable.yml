@@ -19,10 +19,6 @@ branches:
 # using pre-defined build variables
 # full list http://docs.shippable.com/ci/advancedOptions/environmentVariables/
 env:
-  - TEST=foo
-  - TEST=bar
-  
-env:
   global:
     - TEST_RESULTS_DIR=$SHIPPABLE_REPO_DIR/shippable/testresults
     - CODE_COVERAGE_DIR=$SHIPPABLE_REPO_DIR/shippable/codecoverage
@@ -31,7 +27,10 @@ env:
     - DOCKER_REPO="node_app"
     - DOCKER_ACC=devopsrecipes # {account name}
     - SHIP_IMG_RES=$DOCKER_REPO"_img_dh"
-
+  matrix:   
+    - TEST=foo
+    - TEST=bar
+  
 build:
 
   # http://docs.shippable.com/ci/shippableyml/#ci

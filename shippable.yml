@@ -6,7 +6,7 @@ jobs:
           name: test_image
           runtime:
             options:
-              imageName: "manishas/build_alpine_ci"
+              imageName: "devopsrecipes/build_alpine_ci"
               imageTag: "654253"
               pull: true
           script:

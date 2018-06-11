@@ -29,3 +29,5 @@ jobs:
       - script: echo "CANCEL"
     always:
       - script: echo "ALWAYS"    
+    steps:
+      - IN: node_app_ciRepo

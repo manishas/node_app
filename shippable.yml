@@ -1,3 +1,12 @@
+language: node_js
+node_js:
+  - 0.12
+  
+build:
+  ci:
+    - echo "CI section"
+
+
 jobs:
   - name: test_alpine_img
     type: runSh
@@ -14,3 +23,9 @@ jobs:
             - echo "Runsh running successfully!"
 
   
+  - name: node_app_runCI
+    type: runCI
+    on_cancel:
+      - script: echo "CANCEL"
+    always:
+      - script: echo "ALWAYS"    

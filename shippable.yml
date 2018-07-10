@@ -2,6 +2,9 @@ language: node_js
 node_js:
   - 0.12
   
+runtime:
+  nodePool: shippable_shared_aarch64
+  
 build:
   ci:
     - echo "CI section"

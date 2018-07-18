@@ -8,7 +8,7 @@ build:
 
 integrations:
   deploy:
-    - name: myIAM
+    - integrationName: myIAM
       type: aws_iam
 
 

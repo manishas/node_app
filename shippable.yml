@@ -1,7 +1,8 @@
-language: node_js
-node_js:
-  - 0.12
+language: python
 
+python:
+  - 3.4
+  
 runtime:
   nodePool: shippable_shared_aarch64
  

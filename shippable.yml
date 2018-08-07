@@ -5,34 +5,35 @@ node_js:
 build:
   ci:
     - echo "CI section"
+    - docker build -t testimg:latest .
+#
+#integrations:
+#  deploy:
+#    - integrationName: myIAM
+#      type: aws_iam
 
-integrations:
-  deploy:
-    - integrationName: myIAM
-      type: aws_iam
 
-
-jobs:
-  - name: test_alpine_img
-    type: runSh
-    steps:
-      - TASK:
-          name: test_image
-          runtime:
-            options:
-              imageName: "devopsrecipes/build_alpine_ci"
-              imageTag: "654253"
-              pull: true
-          script:
-            - python -V
-            - echo "Runsh running successfully!"
+#jobs:
+#  - name: test_alpine_img
+#    type: runSh
+#    steps:
+#      - TASK:
+#          name: test_image
+#          runtime:
+#            options:
+#              imageName: "devopsrecipes/build_alpine_ci"
+#              imageTag: "654253"
+#              pull: true
+#          script:
+#            - python -V
+#            - echo "Runsh running successfully!"
 
   
-  - name: node_app_runCI
-    type: runCI
-    on_cancel:
-      - script: echo "CANCEL"
-    always:
-      - script: echo "ALWAYS"    
-    steps:
-      - IN: node_app_ciRepo
+#  - name: node_app_runCI
+#    type: runCI
+#    on_cancel:
+#      - script: echo "CANCEL"
+#    always:
+#      - script: echo "ALWAYS"    
+#    steps:
+#      - IN: node_app_ciRepo
